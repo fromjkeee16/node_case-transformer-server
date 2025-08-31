@@ -8,7 +8,7 @@ const {
   RESPONSE_KEYS,
 } = require('./constant/enum');
 
-const supportedCases = Object.values(CASES_ENUM);
+const supportedCases = Object.keys(CASES_ENUM);
 
 const createServer = () => {
   const server = http.createServer((req, res) => {
@@ -55,6 +55,7 @@ const createServer = () => {
     };
 
     res.statusCode = 200;
+    res.statusMessage = 'OK';
 
     res.end(JSON.stringify(responseObject));
   });
