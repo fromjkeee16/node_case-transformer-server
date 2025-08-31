@@ -1,6 +1,6 @@
 const CASES_ENUM = {
-  KEBAB: 'KEBAB',
   SNAKE: 'SNAKE',
+  KEBAB: 'KEBAB',
   CAMEL: 'CAMEL',
   PASCAL: 'PASCAL',
   UPPER: 'UPPER',
@@ -11,16 +11,16 @@ const SEARCH_PARAM_ENUM = {
 };
 
 const ERROR_MESSAGES = {
-  BAD_REQUEST: 'BAD REQUEST!',
+  BAD_REQUEST: 'Bad request',
   EMPTY_QUERY:
     // eslint-disable-next-line max-len
-    'Text to convert is required. Correct request is: "/<TEXT_TO_CONVERT>?toCase=<CASE_NAME>".',
+    '"toCase" query param is required. Correct request is: "/<TEXT_TO_CONVERT>?toCase=<CASE_NAME>".',
   CASE_MISSING:
     // eslint-disable-next-line max-len
-    'This case is not supported. Available cases: SNAKE, KEBAB, CAMEL, PASCAL, UPPER.',
+    `This case is not supported. Available cases: ${Object.keys(CASES_ENUM).join(', ')}.`,
   WRONG_CASE:
     // eslint-disable-next-line max-len
-    '"toCase" query param is required. Correct request is: "/<TEXT_TO_CONVERT>?toCase=<CASE_NAME>".',
+    `This case is not supported. Available cases: ${Object.keys(CASES_ENUM).join(', ')}.`,
 };
 
 const RESPONSE_KEYS = {

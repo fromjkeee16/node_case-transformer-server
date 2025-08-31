@@ -16,7 +16,7 @@ const createServer = () => {
 
     const errors = [];
     const normalizedUrl = new URL(req.url, `http://${req.headers.host}`);
-    const toCase = normalizedUrl.get(SEARCH_PARAM_ENUM.TO_CASE);
+    const toCase = normalizedUrl.searchParams.get(SEARCH_PARAM_ENUM.TO_CASE);
     const textToConvert = normalizedUrl.pathname.split('/').at(1);
 
     if (!textToConvert) {
@@ -26,12 +26,12 @@ const createServer = () => {
     }
 
     if (!toCase) {
-      errors.pusj({
+      errors.push({
         message: ERROR_MESSAGES.CASE_MISSING,
       });
     }
 
-    if (!supportedCases.includes(toCase)) {
+    if (toCase && !supportedCases.includes(toCase)) {
       errors.push({
         message: ERROR_MESSAGES.WRONG_CASE,
       });
