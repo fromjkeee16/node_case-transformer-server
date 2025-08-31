@@ -14,10 +14,10 @@ const ERROR_MESSAGES = {
   BAD_REQUEST: 'Bad request',
   EMPTY_QUERY:
     // eslint-disable-next-line max-len
-    '"toCase" query param is required. Correct request is: "/<TEXT_TO_CONVERT>?toCase=<CASE_NAME>".',
+    'Text to convert is required. Correct request is: "/<TEXT_TO_CONVERT>?toCase=<CASE_NAME>".',
   CASE_MISSING:
     // eslint-disable-next-line max-len
-    `This case is not supported. Available cases: ${Object.keys(CASES_ENUM).join(', ')}.`,
+    `"toCase" query param is required. Correct request is: "/<TEXT_TO_CONVERT>?toCase=<CASE_NAME>".`,
   WRONG_CASE:
     // eslint-disable-next-line max-len
     `This case is not supported. Available cases: ${Object.keys(CASES_ENUM).join(', ')}.`,
